@@ -1,7 +1,7 @@
 __author__ = 'KattStof'
 #! python3
 # GmailToolbox - A toolbox to do automated cleanup + sending
-import imapclient, smtplib, getpass
+import imapclient, smtplib, getpass, time
 print('####################')
 print('######GMAIL#########')
 print('######TOOLBOX#######')
@@ -82,5 +82,7 @@ if choice == '5':
     ammount = int(input('How Many Emails to send?:'))
     for i in range(ammount):
         print('sending ' + str(i + 1))
+        time.sleep(1)
         smtpObj.sendmail(from_email, to_email,'Subject:' + subject + '\n' + body)
     print('Finished!')
+
